@@ -1,0 +1,24 @@
+$font-sizes: (
+  "smaller": 16px,
+  "small": 18px,
+  "medium-small": 20px,
+  "medium": 32px,
+  "big": 52px,
+);
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "semibold": 600,
+  "bold": 700,
+);
+
+$primary: #4b473d;
+$black-color: #333333;
+$gray-color: #666666;
+$faded-gray: #898989;
+$black-gray: #3a3a3a;
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}

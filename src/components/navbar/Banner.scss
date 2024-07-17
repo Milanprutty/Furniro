@@ -1,0 +1,49 @@
+@import "../../scss/variables";
+
+.banner {
+  height: 712px;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .banner__rectangle {
+    width: 570px;
+    height: 430px;
+    background: #fff3e3;
+    margin-top: 50px;
+    margin-right: 50px;
+    border-radius: 10px;
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+
+    padding: 45px 35px;
+
+    .banner__arrival {
+      color: $black-color;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+
+      letter-spacing: 3px;
+    }
+    .banner__collectionText {
+      font-weight: weight(semibold);
+
+      font-size: map-get($font-sizes, big);
+      line-height: 65px;
+
+      color: $primary;
+    }
+    .banner__mainText {
+      color: $black-color;
+      margin-bottom: 50px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      font-size: map-get($font-sizes, small);
+    }
+  }
+}

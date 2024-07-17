@@ -1,0 +1,43 @@
+@import "../../scss/variables";
+
+.rooms-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+
+  .rooms__header {
+    font-weight: weight(bold);
+    font-size: map-get($font-sizes, medium);
+  }
+  .rooms__description {
+    font-size: map-get($font-sizes, medium-small);
+    font-weight: weight(regular);
+    color: $gray-color;
+  }
+
+  .rooms__mapped {
+    display: flex;
+    gap: 1rem;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    .room__image {
+      width: 381px;
+      height: 480px;
+      border-radius: 10px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    .room__description {
+      font-size: 24px;
+      font-weight: weight(semibold);
+    }
+  }
+}
