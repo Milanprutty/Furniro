@@ -3,11 +3,12 @@ import Swiper from "swiper";
 import { register } from "swiper/element/bundle";
 import carouselImg from "../../assets/carouselimg1.png";
 import "./Carousel.scss";
-import Dash from "../../assets/dash.svg";
-import MiniRightArrow from "../../assets/miniRightArrow.svg";
+
 import "swiper/swiper-bundle.css";
 import Line from "../../assets/line.svg";
 import CarouselImg2 from "../../assets/carouselimg2.png";
+import Button from "../Button/Button";
+import CarouselItem from "./CarouselItem";
 
 register();
 
@@ -36,7 +37,7 @@ export const Carousel = () => {
   const swiperRef = useRef<SwiperRef>(null);
 
   useEffect(() => {
-    const handleConsoleLog = () => {
+    const handleEditData = () => {
       const editedData = carouselData.map((item, i) => {
         if (i === swiperRef.current?.swiper.realIndex) {
           return { ...item, isShowing: true };
@@ -49,7 +50,7 @@ export const Carousel = () => {
 
     swiperRef.current?.addEventListener(
       "swiperrealindexchange",
-      handleConsoleLog
+      handleEditData
     );
 
     const refVar = swiperRef;
@@ -57,49 +58,44 @@ export const Carousel = () => {
     return () => {
       refVar.current?.removeEventListener(
         "swiperrealindexchange",
-        handleConsoleLog
+        handleEditData
       );
     };
   }, [carouselData]);
 
   return (
     <div style={{ position: "relative", marginTop: "50px" }}>
+      <div className="carousel-text">
+        <div className="carousel-header">
+          50+ Beautiful rooms inspiration
+          <div className="carousel-description">
+            Our designer already made a lot of beautiful prototipe of rooms that
+            inspire you
+          </div>
+        </div>
+
+        <div>
+          <Button
+            className="Reusable-Button secondary"
+            style={{
+              backgroundColor: "#b88e2f",
+              color: "white",
+              padding: "15px 50px",
+            }}
+          >
+            Explore More
+          </Button>
+        </div>
+      </div>
       <swiper-container
         loop="true"
         ref={swiperRef}
         centered-slides={true}
         slides-per-view={3}
-        className="alr"
+        className="carousel"
       >
         {carouselData.map((image, i) => {
-          return (
-            <div className="swiper-slide" key={i}>
-              <div className="swiper">
-                <img className="swiper-img" src={image.img} />
-                <div
-                  className={
-                    image.isShowing ? "enabled content" : "disabled content"
-                  }
-                >
-                  <div className="swiper__info">
-                    <div className="swiper__room">
-                      0{i + 1} <img src={Dash} alt="Dash" /> Bed Room
-                    </div>
-                    <div className="swiper__description">Inner Peace</div>
-                  </div>
-                </div>
-                <div
-                  className={
-                    image.isShowing
-                      ? "arrow arrow-enabled"
-                      : "arrow arrow-disabled"
-                  }
-                >
-                  <img src={MiniRightArrow} />
-                </div>
-              </div>
-            </div>
-          );
+          return <CarouselItem image={image} key={i} i={i} />;
         })}
       </swiper-container>
       <div

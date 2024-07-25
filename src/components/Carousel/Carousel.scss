@@ -70,7 +70,7 @@ SwiperSlide > swiper-slide {
   margin-top: 50px;
 }
 
-.alr:nth-child(1):nth-child(1) {
+.carousel:nth-child(1):nth-child(1) {
   margin-top: 50px;
 }
 
@@ -147,7 +147,7 @@ SwiperSlide > swiper-slide {
 .swiper__right-arrow {
   cursor: pointer;
   position: absolute;
-  top: 45%;
+  top: 60%;
   right: 10px;
   z-index: 2;
 }
@@ -170,7 +170,7 @@ SwiperSlide > swiper-slide {
   transform: rotate(180deg);
   cursor: pointer;
   left: 10px;
-  top: 45%;
+  top: 60%;
 }
 .nav-arrow {
   img {
@@ -200,4 +200,22 @@ SwiperSlide > swiper-slide {
   white-space: nowrap;
   font-size: 28px;
   font-weight: weight(semibold);
+}
+
+.carousel-text {
+  display: flex;
+  padding-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  .carousel-header {
+    color: $black-gray;
+    font-weight: weight(bold);
+    font-size: 40px;
+  }
+  .carousel-description {
+    font-weight: weight(medium);
+    color: #616161;
+    font-size: 16px;
+  }
 }

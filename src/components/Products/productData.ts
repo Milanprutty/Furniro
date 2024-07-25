@@ -1,6 +1,6 @@
 const randomId = crypto.randomUUID();
 
-interface Products {
+export interface Products {
   name: string;
   description: string;
   price: number;

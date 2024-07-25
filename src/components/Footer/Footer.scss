@@ -1,0 +1,16 @@
+.footer__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container {
+  margin-top: 100px;
+  display: grid;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.footer__left-side {
+  display: flex;
+  flex-direction: column;
+}
