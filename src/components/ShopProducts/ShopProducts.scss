@@ -1,0 +1,37 @@
+.shop-filters-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 100px;
+
+  height: 100px;
+  background-color: #f9f1e7;
+  .shop-filters_border {
+    border-right: 2px solid #9f9f9f;
+    width: 10px;
+    height: 30px;
+  }
+
+  .shop-filters_right-side {
+    display: flex;
+    gap: 5rem;
+    position: relative;
+    :nth-child(1) {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+    }
+  }
+  .shop-filters_left-side {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    :nth-child(1) {
+      display: flex;
+      gap: 1rem;
+      font-size: 20px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "../../scss/variables";
+.banner {
+  width: 100%;
+
+  background-size: cover;
+  height: 316px;
+}
+
+.textContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+
+  .header {
+    font-size: 48px;
+    font-weight: weight(medium);
+    margin: 0px;
+  }
+  .text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    :nth-child(1) {
+      font-weight: weight(medium);
+    }
+    :nth-child(3) {
+      font-weight: 300px;
+    }
+  }
+}

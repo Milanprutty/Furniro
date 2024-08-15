@@ -11,14 +11,14 @@ const Navbar = () => {
       <div>
         <img src={Furniro} about="" />
       </div>
-      <div className="navbar-center">
+      <nav className="navbar-center">
         <ul className="navbar-center__list">
           <li>Home</li>
           <li>Shop</li>
           <li>About</li>
           <li>Contact</li>
         </ul>
-      </div>
+      </nav>
       <div className="navbar-icons">
         <img src={accountAlert} />
         <img src={search} />

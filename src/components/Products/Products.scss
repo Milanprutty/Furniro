@@ -83,3 +83,10 @@
     }
   }
 }
+
+.new {
+}
+
+.test1 > :nth-child(1) {
+  background-color: red;
+}

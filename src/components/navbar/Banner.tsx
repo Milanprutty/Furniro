@@ -15,7 +15,9 @@ const Banner = () => {
           tellus, luctus nec ullamcorper mattis.
         </div>
         <div>
-          <Button className="banner-btn Reusable-Button">Buy Now</Button>
+          <Button className="banner-btn selected Reusable-Button">
+            Buy Now
+          </Button>
         </div>
       </div>
     </div>
