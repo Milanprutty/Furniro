@@ -84,9 +84,22 @@
   }
 }
 
-.new {
+.clickedItem {
+  background-color: #b88e2f !important;
+  border: none;
+  color: white !important;
 }
 
-.test1 > :nth-child(1) {
-  background-color: red;
+.firstItem > .reusable-Button,
+.otherItems > .reusable-Button {
+  background-color: #f9f1e7;
+}
+
+.firstItem > :nth-child(1) {
+  background-color: #b88e2f;
+  border: none;
+}
+
+.hiddenBtn {
+  display: none;
 }

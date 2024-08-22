@@ -2,64 +2,36 @@ import { useEffect, useState } from "react";
 import "../Products/Products.scss";
 import { productArray } from "../Products/productData";
 import Product from "../Products/Product";
+import Button from "../Button/Button";
 
 interface Props {
   currentOption: number;
+  displayed: number;
+  setStartingPoint: React.Dispatch<React.SetStateAction<number>>;
+  setDisplayed: React.Dispatch<React.SetStateAction<number>>;
+  startingPoint: number;
 }
 
-const Products = ({ currentOption }: Props) => {
-  const [startingPoint, setStartingPoint] = useState(0);
-  const [displayed, setDisplayed] = useState(currentOption);
-  const [classNamer, setClassName] = useState("test1");
-
-  const Buttons = Array.from(
-    { length: Math.ceil(productArray.length / currentOption) },
-    (_, i) => (
-      <button
-        style={{
-          width: "60px",
-          height: "60px",
-          fontSize: "20px",
-          borderRadius: "10px",
-          color: "white",
-        }}
-        className="reusable-Button"
-        key={i}
-        onClick={() => handleClick(i)}
-      >
-        {i + 1}
-      </button>
-    )
-  );
-
-  const [content, setContent] = useState(Buttons);
+const Products = ({
+  currentOption,
+  displayed,
+  setStartingPoint,
+  setDisplayed,
+  startingPoint,
+}: Props) => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const handleClick = (index: number) => {
-    const handlePageChange = () => {
-      setStartingPoint(index * currentOption);
-      setDisplayed((index + 1) * currentOption);
-      setClassName("test2");
-    };
-    handlePageChange();
-
-    const edited = content.map((item, i) => {
-      if (i === index) {
-        const newProps = { className: "new" };
-        return { ...item, props: newProps };
-      } else {
-        const props = item.props;
-        const newProps = { ...props, className: "reusable-Button" };
-        return { ...item, props: newProps };
-      }
-    });
-
-    setContent(edited);
+    setStartingPoint(index * currentOption);
+    setDisplayed((index + 1) * currentOption);
+    setActiveIndex(index);
   };
 
   useEffect(() => {
     setDisplayed(currentOption);
     setStartingPoint(0);
-  }, [currentOption]);
+    setActiveIndex(0);
+  }, [currentOption, setDisplayed, setStartingPoint]);
 
   return (
     <div className="products-section">
@@ -69,8 +41,71 @@ const Products = ({ currentOption }: Props) => {
         ))}
       </div>
       <div>
-        <div className={classNamer} style={{ display: "flex", gap: "2rem" }}>
-          {content}
+        <div
+          className={activeIndex === 0 ? "firstItem" : "otherItems"}
+          style={{ display: "flex", gap: "2rem" }}
+        >
+          <Button
+            aria-label="left navigation"
+            className={activeIndex > 0 ? "reusable-Button" : "hiddenBtn"}
+            style={{
+              padding: "20px 30px",
+              borderRadius: "10px",
+              border: "none",
+              fontSize: "1.2rem",
+              cursor: "pointer",
+              fontWeight: "300px",
+            }}
+            onClick={() => handleClick(activeIndex - 1)}
+          >
+            Previous
+          </Button>
+
+          {Array.from(
+            { length: Math.ceil(productArray.length / currentOption) },
+            (_, i) => (
+              <button
+                key={i}
+                style={{
+                  width: "60px",
+                  height: "60px",
+                  fontSize: "20px",
+                  borderRadius: "10px",
+                  color: "black",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+                className={
+                  i === activeIndex
+                    ? "clickedItem reusable-Button"
+                    : "reusable-Button"
+                }
+                onClick={() => handleClick(i)}
+              >
+                {i + 1}
+              </button>
+            )
+          )}
+
+          <Button
+            aria-label="right navigation"
+            className={
+              activeIndex < Math.ceil(productArray.length / currentOption - 1)
+                ? "reusable-Button"
+                : "hiddenBtn"
+            }
+            style={{
+              padding: "20px 30px",
+              borderRadius: "10px",
+              border: "none",
+              fontSize: "1.2rem",
+              cursor: "pointer",
+              fontWeight: "300" as const,
+            }}
+            onClick={() => handleClick(activeIndex + 1)}
+          >
+            Next
+          </Button>
         </div>
       </div>
     </div>
