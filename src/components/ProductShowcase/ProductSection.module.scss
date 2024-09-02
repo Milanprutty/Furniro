@@ -1,0 +1,92 @@
+.smallImg {
+  width: 76px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.smallImages {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  gap: 5rem;
+  .leftSide {
+    display: flex;
+    gap: 2rem;
+    padding-left: 50px;
+    .currentImage {
+      width: 423px;
+      height: 500px;
+      object-fit: cover;
+    }
+  }
+  .rightSide {
+    .headerContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      .nameHeader {
+        font-weight: 400;
+        font-size: 2.6rem;
+        margin: 0px;
+      }
+      .price {
+        font-weight: 500;
+        font-size: 1.5rem;
+        color: #9f9f9f;
+      }
+    }
+  }
+}
+
+.starContainer {
+  display: flex;
+  gap: 0.5rem;
+  img {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.line {
+  border: 1px solid #9f9f9f;
+  height: 40px;
+}
+
+.reviewCount {
+  font-size: 0.9rem;
+  color: #9f9f9f;
+}
+
+.overlapImg {
+  width: 180px; /* Increase the size for better magnification */
+  height: 180px;
+
+  position: absolute;
+  background-size: 1000px;
+  pointer-events: none;
+}
+
+.description {
+  font-size: 0.8rem;
+  max-width: 400px;
+}
+
+.active {
+  color: red;
+}
+.inactive {
+  color: grey;
+}

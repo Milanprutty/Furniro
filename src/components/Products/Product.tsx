@@ -4,6 +4,8 @@ import share from "../../assets/share.svg";
 import compare from "../../assets/compare.svg";
 import productPicture from "../../assets/product.png";
 import { Products } from "./productData";
+import { Link } from "react-router-dom";
+import Search from "../../assets/search.svg";
 
 interface Props {
   product: Products;
@@ -27,6 +29,7 @@ const Product = ({ product }: Props) => {
         <div className="actions">
           <div className="actions__action">
             <img src={share} alt="share" />
+
             <div>Share</div>
           </div>
           <div className="actions__action">
@@ -36,6 +39,12 @@ const Product = ({ product }: Props) => {
           <div className="actions__action">
             <img src={like} alt="like" />
             <div>Like</div>
+          </div>
+          <div className="actions__action">
+            <img src={Search} alt="search" />
+            <Link to={`/products/${product.id}`}>
+              <div>View Item</div>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,0 +1,18 @@
+.header {
+  background-color: #f9f1e7;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 40px;
+  .line {
+    border: 1px solid #9f9f9f;
+    height: 40px;
+  }
+  .name {
+    color: #000000;
+  }
+  .location {
+    color: #9f9f9f;
+  }
+}

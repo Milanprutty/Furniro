@@ -4,17 +4,24 @@ import accountAlert from "../../assets/accountAlert.svg";
 import search from "../../assets/search.svg";
 import heart from "../../assets/heart.svg";
 import cart from "../../assets/shoppingCart.svg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="navbar-container">
-      <div>
-        <img src={Furniro} about="" />
-      </div>
+      <Link to={"/"}>
+        <div>
+          <img src={Furniro} about="" />
+        </div>
+      </Link>
       <nav className="navbar-center">
         <ul className="navbar-center__list">
-          <li>Home</li>
-          <li>Shop</li>
+          <Link to={"/"}>
+            <li>Home</li>
+          </Link>
+          <Link to={"/shop"}>
+            <li>Shop</li>
+          </Link>
           <li>About</li>
           <li>Contact</li>
         </ul>

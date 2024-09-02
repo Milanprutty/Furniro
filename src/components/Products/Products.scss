@@ -14,6 +14,7 @@
   .product-container {
     display: flex;
     justify-content: center;
+
     gap: 2rem;
     flex-wrap: wrap;
     .product {
@@ -38,6 +39,8 @@
         align-items: center;
         .actions {
           gap: 1.5rem;
+          flex-wrap: wrap;
+          justify-content: center;
           display: flex;
           .actions__action {
             display: flex;
@@ -95,7 +98,7 @@
   background-color: #f9f1e7;
 }
 
-.firstItem > :nth-child(1) {
+.firstItem > :nth-child(2) {
   background-color: #b88e2f;
   border: none;
 }

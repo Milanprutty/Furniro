@@ -1,22 +1,22 @@
 import { useState } from "react";
 import styles from "./DropDown.module.scss";
 
-interface Props {
-  currentOption: number | string;
+interface DropDownProps<T> {
+  setCurrentOption: React.Dispatch<React.SetStateAction<T>>;
+  currentOption: T;
+  options: T[];
   classname: string;
   width?: string;
-  setCurrentOption: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const options = [6, 12, 18];
-
-const DropDown = ({
+const DropDown = <T extends string | number>({
   currentOption,
   classname,
   width,
   setCurrentOption,
+  options,
   ...rest
-}: Props) => {
+}: DropDownProps<T>) => {
   const [clicked, setClicked] = useState<boolean>(false);
 
   const handleClick = () => {
