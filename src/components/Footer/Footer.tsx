@@ -50,6 +50,7 @@ const Footer = () => {
                 className="footer-item__input"
                 placeholder="Enter Your Email Address"
                 type="email"
+                name="email"
               />
               <span className="footer-item__span">subscribe</span>
             </div>

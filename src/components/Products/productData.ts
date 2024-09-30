@@ -4,6 +4,8 @@ export interface Products {
   price: number;
   id: string;
   options: string[];
+  info: string;
+  reviews: string[];
 }
 
 const getRandomId = () => {
@@ -17,6 +19,8 @@ export const productArray: Products[] = [
     description: "Stydddlish cafe chair",
     price: 100,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
@@ -24,6 +28,8 @@ export const productArray: Products[] = [
     description: "Styldish cafe chair",
     price: 1000,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
@@ -31,6 +37,8 @@ export const productArray: Products[] = [
     description: "Stysalish cafe chair",
     price: 100,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
@@ -38,6 +46,8 @@ export const productArray: Products[] = [
     description: "Stysalish cafe chair",
     price: 100,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
@@ -45,6 +55,8 @@ export const productArray: Products[] = [
     description: "Styglish cafe chair",
     price: 100,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
@@ -52,6 +64,8 @@ export const productArray: Products[] = [
     description: "Styjglish cafe chair",
     price: 200,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
@@ -59,6 +73,8 @@ export const productArray: Products[] = [
     description: "Stweylish cafe chair",
     price: 10,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
@@ -66,6 +82,8 @@ export const productArray: Products[] = [
     description: "Stylisaaah cafe chair",
     price: 100,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
@@ -73,6 +91,8 @@ export const productArray: Products[] = [
     description: "Stylisbbbh cafe chair",
     price: 100,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
@@ -80,12 +100,16 @@ export const productArray: Products[] = [
     description: "Stylish cafe chair",
     price: 100,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
     name: "Syltherine",
     description: "Stylish cafe chair",
     price: 100,
+    info: "abc",
+    reviews: ["test", "example"],
     options: ["L", "XL", "XS"],
   },
   {
@@ -94,12 +118,16 @@ export const productArray: Products[] = [
     description: "fdsfdsfd cafe chair",
     price: 100,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
   {
     id: getRandomId(),
     name: "Syltherine",
     description: "Stylish cafe chair",
     price: 100,
+    info: "abc",
+    reviews: ["test", "example"],
     options: ["L", "XL", "XS"],
   },
   {
@@ -108,5 +136,7 @@ export const productArray: Products[] = [
     description: "Stydddlish cafe chair",
     price: 100,
     options: ["L", "XL", "XS"],
+    info: "abc",
+    reviews: ["test", "example"],
   },
 ];

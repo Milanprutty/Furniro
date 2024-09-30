@@ -1,12 +1,12 @@
-import MainPage from "./Pages/MainPage";
+import { createContext, useRef, useState } from "react";
 
-import ShopPage from "./Pages/ShopPage";
-
+export const Context = createContext(4);
 const App = () => {
   return (
     <>
-      {/* <MainPage /> */}
-      <ShopPage />
+      <div>
+        <Context.Provider value={1}></Context.Provider>
+      </div>
     </>
   );
 };

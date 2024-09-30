@@ -24,6 +24,7 @@
       width: 423px;
       height: 500px;
       object-fit: cover;
+      border-radius: 10px;
     }
   }
   .rightSide {
@@ -85,8 +86,66 @@
 }
 
 .active {
-  color: red;
+  background-color: #b88e2f;
+  color: white;
 }
 .inactive {
-  color: grey;
+  background-color: #f9f1e7;
+  color: black;
+}
+
+.sizes {
+  display: flex;
+  gap: 1rem;
+  .size {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.span {
+  color: #9f9f9f;
+  font-size: 0.9rem;
+}
+
+.color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  margin-top: 50px;
+
+  .infoText {
+    padding-top: 20px;
+    border-top: 1px solid #d9d9d9;
+    display: grid;
+    grid-template-columns: 100px 20px 1fr;
+
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  }
 }

@@ -6,12 +6,39 @@ import productPicture from "../../assets/product.png";
 import { Products } from "./productData";
 import { Link } from "react-router-dom";
 import Search from "../../assets/search.svg";
+import { useContext } from "react";
+import { MyContext } from "../context/ContextProvider";
 
 interface Props {
   product: Products;
 }
 
 const Product = ({ product }: Props) => {
+  const context = useContext(MyContext);
+
+  if (!context) {
+    throw new Error("Navbar must be used within a ContextProvider");
+  }
+
+  const { cart, setCart } = context;
+
+  const handleAddToCart = (count: number) => {
+    const filtered = cart.filter((item) => {
+      return item.id === product.id;
+    });
+    if (filtered.length === 0) {
+      setCart([
+        ...cart,
+        {
+          id: product.id,
+          name: product.name,
+          count: count,
+          price: product.price,
+        },
+      ]);
+    }
+  };
+
   return (
     <div className="product">
       <img
@@ -25,7 +52,12 @@ const Product = ({ product }: Props) => {
         <div className="product__price">USD {product.price}</div>
       </div>
       <div className="product-overlay">
-        <Button className="secondary Reusable-Button">Add to cart</Button>
+        <Button
+          onClick={() => handleAddToCart(1)}
+          className="secondary Reusable-Button"
+        >
+          Add to cart
+        </Button>
         <div className="actions">
           <div className="actions__action">
             <img src={share} alt="share" />
@@ -43,7 +75,7 @@ const Product = ({ product }: Props) => {
           <div className="actions__action">
             <img src={Search} alt="search" />
             <Link to={`/products/${product.id}`}>
-              <div>View Item</div>
+              <div onClick={() => window.scrollTo(0, 0)}>View Item</div>
             </Link>
           </div>
         </div>

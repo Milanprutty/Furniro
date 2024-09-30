@@ -5,8 +5,8 @@ import { shopFeatures } from "./Features";
 const FeatureFrame = () => {
   return (
     <section className={styles.frame}>
-      {shopFeatures.map((item) => {
-        return <Feature feature={item} />;
+      {shopFeatures.map((item, i) => {
+        return <Feature key={i} feature={item} />;
       })}
     </section>
   );
