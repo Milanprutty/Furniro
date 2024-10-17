@@ -12,6 +12,7 @@
   overflow-y: scroll;
   transition: 1s width;
   overflow-x: clip;
+  z-index: 1000;
 }
 
 .closed {

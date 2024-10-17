@@ -3,6 +3,7 @@ import styles from "./ShoppingCart.module.scss";
 import { MyContext } from "../context/ContextProvider";
 import Img from "../../assets/carouselimg1.png";
 import Delete from "../../assets/delete.svg";
+import { Link } from "react-router-dom";
 
 interface Props {
   className: string;
@@ -69,7 +70,9 @@ const ShoppingCart = ({ className, onDeleteItem }: Props) => {
           </div>
         </div>
         <div className={styles.buttons}>
-          <button className={styles.button}>Cart</button>
+          <button className={styles.button}>
+            <Link to="/cart">Cart</Link>
+          </button>
           <button className={styles.button}>Checkout</button>
         </div>
       </div>

@@ -7,6 +7,8 @@ import ShopPage from "./Pages/ShopPage.tsx";
 import MainPage from "./Pages/MainPage.tsx";
 import Product from "./components/ProductShowcase/Product.tsx";
 import ContextProvider from "./components/context/ContextProvider.tsx";
+import CartPage from "./Pages/CartPage.tsx";
+import CheckoutPage from "./Pages/CheckoutPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path: "/shop",
     element: <ShopPage />,
+  },
+  {
+    path: "/cart",
+    element: <CartPage />,
+  },
+  {
+    path: "/checkout",
+    element: <CheckoutPage />,
   },
   {
     path: "/products/:productId",

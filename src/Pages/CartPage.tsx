@@ -1,13 +1,13 @@
+import Cart from "../components/Cart/Cart";
 import FeatureFrame from "../components/FeatureFrame/FeatureFrame";
 import Footer from "../components/Footer/Footer";
+import useShoppingCart from "../components/hooks/useShoppingCart";
+
 import Navbar from "../components/navbar/Navbar";
 import ShopBanner from "../components/ShopBanner/ShopBanner";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
-import ShopProducts from "../components/ShopProducts/ShopProducts";
-import useShoppingCart from "../components/hooks/useShoppingCart";
-import "../App.scss";
 
-const ShopPage = () => {
+const CartPage = () => {
   const { isOpen, handleDeleteItem, ref } = useShoppingCart();
 
   return (
@@ -20,12 +20,12 @@ const ShopPage = () => {
         />
       </div>
       {isOpen && <div className="overlay"></div>}
-      <ShopBanner name="Shop" location="Shop" />
-      <ShopProducts />
+      <ShopBanner name="Cart" location="Cart" />
+      <Cart />
       <FeatureFrame />
       <Footer />
     </>
   );
 };
 
-export default ShopPage;
+export default CartPage;
