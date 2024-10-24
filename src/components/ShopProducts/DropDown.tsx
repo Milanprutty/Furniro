@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./DropDown.module.scss";
 
 interface DropDownProps<T> {
@@ -10,9 +10,7 @@ interface DropDownProps<T> {
 }
 
 const DropDown = <T extends string | number>({
-  currentOption,
   classname,
-  width,
   setCurrentOption,
   options,
   ...rest
@@ -23,29 +21,27 @@ const DropDown = <T extends string | number>({
     setClicked(!clicked);
   };
 
+  const handleCapture = (event: React.FormEvent<HTMLSelectElement>) => {
+    const target = event.target as HTMLSelectElement;
+    setCurrentOption(target.value as T);
+  };
+
   return (
     <div
       onClick={handleClick}
       {...rest}
       className={`${styles.container} ${styles[classname]}`}
     >
-      <div className={styles.currentOption} style={{ width: width }}>
-        {currentOption}
-      </div>
       <div className={clicked ? `  ${styles.open} ` : `${styles.closed}`}>
-        <ul className={styles.list}>
+        <select onChange={handleCapture}>
           {options.map((option, i) => {
             return (
-              <li
-                style={{ width: "100%" }}
-                onClick={() => setCurrentOption(option)}
-                key={i}
-              >
+              <option value={option} style={{ width: "100%" }} key={i}>
                 {option}
-              </li>
+              </option>
             );
           })}
-        </ul>
+        </select>
       </div>
     </div>
   );

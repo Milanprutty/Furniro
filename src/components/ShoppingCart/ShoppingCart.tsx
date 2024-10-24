@@ -73,7 +73,9 @@ const ShoppingCart = ({ className, onDeleteItem }: Props) => {
           <button className={styles.button}>
             <Link to="/cart">Cart</Link>
           </button>
-          <button className={styles.button}>Checkout</button>
+          <button className={styles.button}>
+            <Link to="/checkout">Checkout</Link>
+          </button>
         </div>
       </div>
     </div>

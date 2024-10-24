@@ -4,6 +4,7 @@ import { MyContext } from "../context/ContextProvider";
 import furniture from "../../assets/furniture.png";
 import Trash from "../../assets/trashIcon.svg";
 import useShoppingCart from "../hooks/useShoppingCart";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const context = useContext(MyContext);
@@ -65,7 +66,9 @@ const Cart = () => {
             <span className={styles.pricename}>Total</span>
             <span className={styles.bigprice}>USD {num}</span>
           </div>
-          <button className={styles.button}>Check Out</button>
+          <button className={styles.button}>
+            <Link to="/checkout">Check Out</Link>
+          </button>
         </div>
       </section>
     </section>

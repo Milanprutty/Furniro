@@ -1,0 +1,107 @@
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-top: 100px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.totalheader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.bold {
+  color: #b88e2f;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.count {
+  font-size: 0.75rem;
+}
+
+.cartItem {
+  justify-content: space-between;
+  display: flex;
+  :first-child {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.name {
+  color: #9f9f9f;
+}
+
+.count {
+  font-size: 0.75rem;
+}
+
+.cartitems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.transferoptions {
+  border-top: 1px solid #d9d9d9;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.transfer {
+  display: flex;
+  gap: 1rem;
+}
+
+.description {
+  color: #9f9f9f;
+  font-weight: 300;
+}
+
+.optionscontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.graytext {
+  font-weight: 500;
+
+  color: #9f9f9f;
+}
+
+.transfercontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.button {
+  width: 318px;
+  height: 64px;
+  background-color: transparent;
+  border: 1px solid #000000;
+  border-radius: 15px;
+
+  font-size: 20px;
+
+  color: #000000;
+  margin-top: 30px;
+  cursor: pointer;
+}
