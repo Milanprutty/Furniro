@@ -39,16 +39,14 @@ const FilterOptions = ({
           setCurrentOption={setCurrentOption}
           currentOption={currentOption}
           width={"30px"}
-          classname="first"
           options={[6, 12, 18]}
         />
         <div>Sort By</div>
-        <div></div>
+
         <DropDown
           setCurrentOption={setCurrentOption2}
           currentOption={currentOption2}
-          classname="second"
-          options={["name", "price", "none"]}
+          options={["name", "price", "price reversed", "none"]}
         />
       </div>
     </section>

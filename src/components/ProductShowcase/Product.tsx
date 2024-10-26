@@ -8,10 +8,13 @@ import styles from "./Product.module.scss";
 import Description from "./Description";
 import ProductMap from "../Products/ProductMap";
 import Footer from "../Footer/Footer";
+import useShoppingCart from "../hooks/useShoppingCart";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 const Product = () => {
   const { productId } = useParams();
   const [openIndex, setOpenIndex] = useState(0);
+  const { isOpen, handleDeleteItem, ref } = useShoppingCart();
 
   const infos = [
     {
@@ -36,7 +39,14 @@ const Product = () => {
 
   return (
     <>
-      <Navbar />
+      <div ref={ref}>
+        <Navbar />
+        <ShoppingCart
+          className={isOpen ? "open" : "closed"}
+          onDeleteItem={handleDeleteItem}
+        />
+      </div>
+      {isOpen && <div className="overlay"></div>}
       {Product && (
         <>
           <Header name={Product.name} />

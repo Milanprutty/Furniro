@@ -48,6 +48,8 @@ const Products = ({
         if (nameA > nameB) return 1;
         return 0;
       });
+    } else if (currentOption2 === "price reversed") {
+      sortedArray.sort((a, b) => a.price - b.price).reverse();
     } else if (currentOption2 === "none") {
       sortedArray = [...originalProductArray];
     }
