@@ -13,6 +13,7 @@
 }
 
 .navbar-center {
+  flex-basis: 50%;
   .navbar-center__list {
     li {
       cursor: pointer;
@@ -33,5 +34,24 @@
   user-select: none;
   img {
     cursor: pointer;
+  }
+}
+
+@media (max-width: 958px) {
+  .navbar-icons {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .navbar-center__list {
+    display: none !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .navbar-container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }

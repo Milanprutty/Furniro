@@ -1,11 +1,14 @@
 .frame {
-  height: 270px;
+  height: fit-content;
   background-color: #faf3ea;
   margin-top: 100px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
+  gap: 1rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .Feature {

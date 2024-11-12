@@ -9,11 +9,13 @@
   .rooms__header {
     font-weight: weight(bold);
     font-size: map-get($font-sizes, medium);
+    text-align: center;
   }
   .rooms__description {
     font-size: map-get($font-sizes, medium-small);
     font-weight: weight(regular);
     color: $gray-color;
+    text-align: center;
   }
 
   .rooms__mapped {

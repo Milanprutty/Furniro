@@ -32,22 +32,26 @@ const FilterOptions = ({
           {productArray.length} results
         </div>
       </div>
+
       <div className="shop-filters_right-side">
-        <div>Show</div>
+        <div>
+          <div>Show</div>
 
-        <DropDown
-          setCurrentOption={setCurrentOption}
-          currentOption={currentOption}
-          width={"30px"}
-          options={[6, 12, 18]}
-        />
-        <div>Sort By</div>
-
-        <DropDown
-          setCurrentOption={setCurrentOption2}
-          currentOption={currentOption2}
-          options={["name", "price", "price reversed", "none"]}
-        />
+          <DropDown
+            setCurrentOption={setCurrentOption}
+            currentOption={currentOption}
+            width={"30px"}
+            options={[6, 12, 18]}
+          />
+          <div>Sort By</div>
+        </div>
+        <div>
+          <DropDown
+            setCurrentOption={setCurrentOption2}
+            currentOption={currentOption2}
+            options={["name", "price", "price reversed", "none"]}
+          />
+        </div>
       </div>
     </section>
   );

@@ -93,6 +93,11 @@ export const Carousel = () => {
         centered-slides={true}
         slides-per-view={3}
         className="carousel"
+        breakpoints={JSON.stringify({
+          1300: { slidesPerView: 3 },
+          880: { slidesPerView: 2 },
+          200: { slidesPerView: 1 },
+        })}
       >
         {carouselData.map((image, i) => {
           return <CarouselItem image={image} key={i} i={i} />;

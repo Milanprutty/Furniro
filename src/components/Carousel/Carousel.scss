@@ -212,10 +212,21 @@ SwiperSlide > swiper-slide {
     color: $black-gray;
     font-weight: weight(bold);
     font-size: 40px;
+    text-align: center;
   }
   .carousel-description {
     font-weight: weight(medium);
     color: #616161;
     font-size: 16px;
+  }
+}
+
+@media (max-width: 880px) {
+  .swiper-img {
+    width: 380px;
+  }
+  .swiper {
+    display: flex !important;
+    justify-content: center;
   }
 }

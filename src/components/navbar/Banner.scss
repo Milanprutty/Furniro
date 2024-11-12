@@ -9,9 +9,9 @@
   align-items: center;
   .banner__rectangle {
     width: 570px;
-    height: 430px;
+    height: fit-content;
     background: #fff3e3;
-    margin-top: 50px;
+    margin-left: 50px;
     margin-right: 50px;
     border-radius: 10px;
     display: flex;
@@ -45,5 +45,12 @@
       line-height: 24px;
       font-size: map-get($font-sizes, small);
     }
+  }
+}
+
+@media (max-width: 461px) {
+  .banner__rectangle {
+    margin-left: 25px !important;
+    margin-right: 25px !important;
   }
 }

@@ -16,3 +16,9 @@
     color: #9f9f9f;
   }
 }
+
+@media (max-width: 421px) {
+  .header {
+    padding-left: 10px;
+  }
+}

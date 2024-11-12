@@ -26,11 +26,11 @@ const Cart = () => {
     <section className={styles.leftright}>
       <section className={styles.leftside}>
         <div className={styles.titles}>
-          <h3>Product</h3>
+          <h3 className={styles.producttop}>Product</h3>
           <h3>Price</h3>
 
           <div className={styles.quantitysubtotal}>
-            <h3>Quantity</h3>
+            <h3 className={styles.quantitytop}>Quantity</h3>
             <h3>Subtotal</h3>
           </div>
         </div>
@@ -40,9 +40,18 @@ const Cart = () => {
               <div className={styles.cartitem} key={i}>
                 <img className={styles.image} src={furniture} alt="furniture" />
                 <div className={styles.gray}>{item.name}</div>
-                <div className={styles.gray}>USD {item.price}</div>
+                <div className={styles.hiddenprice}>
+                  <div>{item.count} </div>
+                  <span> * </span>
+                  <div> {item.price} </div>
+                </div>
+                <div className={`${styles.gray} ${styles.getshidden} `}>
+                  USD {item.price}
+                </div>
                 <div className={styles.quantity}>{item.count}</div>
-                <div>USD {item.count * item.price}</div>
+                <div className={styles.subtotal}>
+                  USD {item.count * item.price}
+                </div>
                 <img
                   className={styles.trash}
                   onClick={() => handleDeleteItem(i)}

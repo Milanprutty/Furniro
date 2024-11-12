@@ -1,12 +1,11 @@
 import "./Navbar.scss";
 import Furniro from "../../assets/Furniro.svg";
 
-import search from "../../assets/search.svg";
-import heart from "../../assets/heart.svg";
 import cart from "../../assets/shoppingCart.svg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { MyContext } from "../context/ContextProvider";
+import Burger from "../burger/Burger";
 
 const Navbar = () => {
   const context = useContext(MyContext);
@@ -19,7 +18,7 @@ const Navbar = () => {
 
   return (
     <div className="navbar-container">
-      <Link to={"/"}>
+      <Link to={"/"} style={{ flexBasis: "25%" }}>
         <div>
           <img src={Furniro} alt="" />
         </div>
@@ -39,10 +38,9 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className="navbar-icons">
-        <img src={search} />
-        <img src={heart} />
         <img src={cart} className="cart" onClick={() => setIsOpen(true)} />
       </div>
+      <Burger />
     </div>
   );
 };

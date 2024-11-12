@@ -44,3 +44,32 @@
 .title {
   font-weight: 500;
 }
+
+.checkoutcontainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 1000px) {
+  .checkoutcontainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 544px) {
+  .left {
+    width: 100%;
+    align-items: center;
+  }
+  .biginput {
+    width: unset;
+  }
+  .names {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .right {
+    width: 90%;
+  }
+}

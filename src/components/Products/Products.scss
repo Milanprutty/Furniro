@@ -106,3 +106,18 @@
 .hiddenBtn {
   display: none;
 }
+
+@media (max-width: 669px) {
+  .hidden {
+    width: unset !important;
+  }
+  .firstItem {
+    justify-content: center;
+    margin-right: 30px;
+    flex-wrap: wrap;
+  }
+  .otherItems {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
