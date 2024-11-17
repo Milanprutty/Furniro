@@ -1,19 +1,21 @@
 import { SetStateAction } from "react";
 import style from "./Button.module.scss";
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
   type: string;
   children?: React.ReactNode;
   setCount?: React.Dispatch<SetStateAction<number>>;
-  count?: number;
+  count: number;
 }
 
 const Button = ({ type, children, setCount, count, ...rest }: Props) => {
   const handleUpdateCount = (operator: "addition" | "subtraction") => {
-    if (operator === "addition") {
-      setCount(count + 1);
-    } else if (operator === "subtraction" && count > 1) {
-      setCount(count - 1);
+    if (setCount) {
+      if (operator === "addition") {
+        setCount(count + 1);
+      } else if (operator === "subtraction" && count > 1) {
+        setCount(count - 1);
+      }
     }
   };
 
