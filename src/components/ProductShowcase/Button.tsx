@@ -1,21 +1,20 @@
 import { SetStateAction } from "react";
 import style from "./Button.module.scss";
 
+// Extending HTMLAttributes for div, not ButtonHTMLAttributes
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  type: string;
+  type: "count" | "normal"; // Restrict 'type' to 'count' or 'normal'
   children?: React.ReactNode;
   setCount?: React.Dispatch<SetStateAction<number>>;
-  count: number;
+  count?: number;
 }
 
-const Button = ({ type, children, setCount, count, ...rest }: Props) => {
+const Button = ({ type, children, setCount, count = 1, ...rest }: Props) => {
   const handleUpdateCount = (operator: "addition" | "subtraction") => {
-    if (setCount) {
-      if (operator === "addition") {
-        setCount(count + 1);
-      } else if (operator === "subtraction" && count > 1) {
-        setCount(count - 1);
-      }
+    if (operator === "addition") {
+      setCount?.(count + 1); // Use optional chaining
+    } else if (operator === "subtraction" && count > 1) {
+      setCount?.(count - 1); // Use optional chaining
     }
   };
 
