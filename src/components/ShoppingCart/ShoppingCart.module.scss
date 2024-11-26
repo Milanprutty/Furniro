@@ -116,3 +116,20 @@
   flex-direction: column;
   gap: 1rem;
 }
+
+.asshole {
+  opacity: 0;
+}
+
+@keyframes test {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+}
+
+.asshole {
+  animation: test 2s forwards;
+}

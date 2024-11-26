@@ -31,6 +31,7 @@ const ShoppingCart = ({ className, onDeleteItem }: Props) => {
         <h2>Shopping Cart</h2>
         <div>cart</div>
       </div>
+
       <div className={styles.items}>
         {cart.length > 0 ? (
           cart.map((cartitem, i) => {
@@ -59,24 +60,28 @@ const ShoppingCart = ({ className, onDeleteItem }: Props) => {
             );
           })
         ) : (
-          <div>Cart is Empty</div>
+          <div style={{ minWidth: "200px" }}>Cart is Empty</div>
         )}
       </div>
       <div className={styles.bottom}>
-        <div className={styles.subtotalContainer}>
-          <div>Subtotal</div>
-          <div style={{ fontSize: "16px" }} className={styles.price}>
-            USD {num}
+        {cart.length !== 0 && (
+          <div className={styles.subtotalContainer}>
+            <div>Subtotal</div>
+            <div style={{ fontSize: "16px" }} className={styles.price}>
+              USD {num}
+            </div>
           </div>
-        </div>
-        <div className={styles.buttons}>
-          <Link to="/cart">
-            <button className={styles.button}>Cart</button>
-          </Link>
-          <Link to="/checkout">
-            <button className={styles.button}>Checkout</button>
-          </Link>
-        </div>
+        )}
+        {cart.length !== 0 && (
+          <div className={styles.buttons}>
+            <Link to="/cart">
+              <button className={styles.button}>Cart</button>
+            </Link>
+            <Link to="/checkout">
+              <button className={styles.button}>Checkout</button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -39,7 +39,7 @@ const FilterOptions = ({
 
           <DropDown
             setCurrentOption={setCurrentOption}
-            currentOption={currentOption}
+            currentoption={currentOption}
             width={"30px"}
             options={[6, 12, 18]}
           />
@@ -48,7 +48,7 @@ const FilterOptions = ({
         <div>
           <DropDown
             setCurrentOption={setCurrentOption2}
-            currentOption={currentOption2}
+            currentoption={currentOption2}
             options={["name", "price", "price reversed", "none"]}
           />
         </div>

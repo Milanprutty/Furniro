@@ -19,6 +19,8 @@
     "swiper": "^11.1.4"
   },
   "devDependencies": {
+    "@types/jasmine": "^5.1.4",
+    "@types/node": "^22.9.3",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@types/react-slick": "^0.23.13",

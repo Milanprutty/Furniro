@@ -8,6 +8,7 @@ import Navbar from "../components/navbar/Navbar";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 import useShoppingCart from "../components/hooks/useShoppingCart";
 import "../App.scss";
+import NotificationContainer from "../components/AddedItemNotification/NotificationContainer";
 
 const MainPage = () => {
   const { isOpen, handleDeleteItem, ref } = useShoppingCart();
@@ -23,7 +24,7 @@ const MainPage = () => {
       </div>
       {isOpen && <div className="overlay"></div>}
       <Banner />
-      <Rooms />
+      <Rooms /> <NotificationContainer />
       <Products />
       <Carousel />
       <Share />

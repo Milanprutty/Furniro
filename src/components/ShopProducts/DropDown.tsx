@@ -3,7 +3,7 @@ import styles from "./DropDown.module.scss";
 
 interface DropDownProps<T> {
   setCurrentOption: React.Dispatch<React.SetStateAction<T>>;
-  currentOption: T;
+  currentoption: T;
   options: T[];
   width?: string;
 }

@@ -1,0 +1,30 @@
+.notifications {
+  position: fixed;
+  z-index: 100000;
+  right: 20px;
+  transition: top 0.3s ease-in-out; // Smooth repositioning
+}
+
+.notification {
+  background: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateY(0); // Default position
+}
+
+.notification.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+.notification.success {
+  background: #4caf50; // Green for success
+}
+
+.notification.error {
+  background: #f44336; // Red for error
+}
