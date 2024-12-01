@@ -10,6 +10,7 @@ import ProductMap from "../Products/ProductMap";
 import Footer from "../Footer/Footer";
 import useShoppingCart from "../hooks/useShoppingCart";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import NotificationContainer from "../AddedItemNotification/NotificationContainer";
 
 const Product = () => {
   const { productId } = useParams();
@@ -25,7 +26,7 @@ const Product = () => {
     },
   ];
 
-  const handleTest = (index: number) => {
+  const handleChangeIndex = (index: number) => {
     setOpenIndex(index);
   };
 
@@ -65,7 +66,7 @@ const Product = () => {
                       ? `${styles.current}`
                       : `${styles.unselected}`
                   }
-                  onClick={() => handleTest(i)}
+                  onClick={() => handleChangeIndex(i)}
                   key={i}
                 >
                   {item.name}
@@ -94,6 +95,7 @@ const Product = () => {
           >
             <div className="products__header">Related Products</div>
             <ProductMap productCount={4} />
+            <NotificationContainer />
           </div>
           <Footer />
         </>

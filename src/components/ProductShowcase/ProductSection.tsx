@@ -57,6 +57,8 @@ const ProductSection = ({ name, price, options, id }: Props) => {
           price: price,
         },
       ]);
+    } else {
+      alert("Item is already in cart");
     }
   };
 
