@@ -6,9 +6,17 @@ import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 import ShopProducts from "../components/ShopProducts/ShopProducts";
 import useShoppingCart from "../components/hooks/useShoppingCart";
 import "../App.scss";
+import { useLocation } from "react-router";
+import { useEffect } from "react";
+import NotificationContainer from "../components/AddedItemNotification/NotificationContainer";
 
 const ShopPage = () => {
   const { isOpen, handleDeleteItem, ref } = useShoppingCart();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <>
@@ -22,6 +30,7 @@ const ShopPage = () => {
       {isOpen && <div className="overlay"></div>}
       <ShopBanner name="Shop" location="Shop" />
       <ShopProducts />
+      <NotificationContainer />
       <FeatureFrame />
       <Footer />
     </>

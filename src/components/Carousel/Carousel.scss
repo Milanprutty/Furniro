@@ -230,3 +230,9 @@ SwiperSlide > swiper-slide {
     justify-content: center;
   }
 }
+
+@media (max-width: 415px) {
+  .swiper-img {
+    width: unset;
+  }
+}

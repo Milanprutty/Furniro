@@ -1,8 +1,14 @@
+import { Link } from "react-router-dom";
 import "./Footer.scss";
+
+interface items {
+  link: string;
+  title: string;
+}
 
 interface footerTypes {
   header: string;
-  items?: string[];
+  items?: items[];
   isAForm?: boolean;
   submitText?: string;
 }
@@ -10,11 +16,22 @@ interface footerTypes {
 const footerData: footerTypes[] = [
   {
     header: "Links",
-    items: ["Home", "Shop", "About", "Contact"],
+
+    items: [
+      { link: "/", title: "Home" },
+      { link: "/shop", title: "Shop" },
+      { link: "/", title: "About" },
+      { link: "/", title: "Contact" },
+    ],
   },
   {
     header: "Help",
-    items: ["Payment Options", "Returns", "Privacy Policies"],
+
+    items: [
+      { link: "/", title: "Payment Options" },
+      { link: "/", title: "Returns" },
+      { link: "/", title: "Privacy Policies" },
+    ],
   },
 ];
 
@@ -37,7 +54,11 @@ const Footer = () => {
                 <div className="footer-item__header">{item.header}</div>
                 <div className="footer-item__links">
                   {item.items?.map((linkItem, i) => {
-                    return <div key={i}>{linkItem}</div>;
+                    return (
+                      <div key={i}>
+                        <Link to={linkItem.link}>{linkItem.title}</Link>
+                      </div>
+                    );
                   })}
                 </div>
               </div>

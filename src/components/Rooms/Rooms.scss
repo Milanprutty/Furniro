@@ -43,3 +43,13 @@
     }
   }
 }
+
+@media (max-width: 417px) {
+  .rooms-container {
+    .room {
+      .room__image {
+        width: 330px;
+      }
+    }
+  }
+}

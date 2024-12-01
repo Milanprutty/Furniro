@@ -1,3 +1,4 @@
+import NotificationContainer from "../components/AddedItemNotification/NotificationContainer";
 import Cart from "../components/Cart/Cart";
 import FeatureFrame from "../components/FeatureFrame/FeatureFrame";
 import Footer from "../components/Footer/Footer";
@@ -21,6 +22,7 @@ const CartPage = () => {
       </div>
       {isOpen && <div className="overlay"></div>}
       <ShopBanner name="Cart" location="Cart" />
+      <NotificationContainer />
       <Cart />
       <FeatureFrame />
       <Footer />

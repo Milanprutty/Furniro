@@ -9,10 +9,16 @@ import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 import useShoppingCart from "../components/hooks/useShoppingCart";
 import "../App.scss";
 import NotificationContainer from "../components/AddedItemNotification/NotificationContainer";
+import { useLocation } from "react-router";
+import { useEffect } from "react";
 
 const MainPage = () => {
   const { isOpen, handleDeleteItem, ref } = useShoppingCart();
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <>
       <div ref={ref}>

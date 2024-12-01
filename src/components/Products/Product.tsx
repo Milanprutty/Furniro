@@ -9,14 +9,6 @@ import Search from "../../assets/search.svg";
 import { useContext } from "react";
 import { MyContext } from "../context/ContextProvider";
 
-type Notification = {
-  id: number;
-  message: string;
-  timer: NodeJS.Timeout | null;
-  visible: false | true;
-  type: "success" | "error";
-};
-
 interface Props {
   product: Products;
 }
@@ -28,7 +20,7 @@ const Product = ({ product }: Props) => {
     throw new Error("Navbar must be used within a ContextProvider");
   }
 
-  const { cart, setCart, setNotifications } = context;
+  const { cart, setCart } = context;
 
   const handleAddToCart = (count: number) => {
     const filtered = cart.filter((item) => {
@@ -45,16 +37,7 @@ const Product = ({ product }: Props) => {
         },
       ]);
     } else {
-      const id = Date.now();
-      const newNotification: Notification = {
-        id,
-        message: "Successfully added item to cart",
-        type: "success",
-        visible: true,
-        timer: null,
-      };
-
-      setNotifications((prev) => [...prev, newNotification]);
+      alert("Item is already in cart");
     }
   };
 
